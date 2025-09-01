@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ギフトバイ｜電子ギフト券買取</title>
+  <meta name="description" content="Amazon・Apple・Google Play・ニンテンドープリペイドなど電子ギフト券のオンライン買取サイト。最短即時、手数料0円。" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="ギフトバイ">
+      <img src="img/logo.svg" alt="" width="28" height="28">
+      <span>ギフトバイ</span>
+    </a>
+    <nav class="nav">
+      <a href="#calc">買取シミュレーター</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#contact" class="btn small">申込み</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>電子ギフト券を、<span class="accent">かんたん・安心・すぐ現金化</span></h1>
+        <p>Amazon・Apple・Google Play・ニンテンドープリペイドなどに対応。本人確認はオンラインで完結、振込手数料は<span class="nowrap">0円</span>。</p>
+        <div class="hero-cta">
+          <a class="btn" href="#calc">買取額を試算する</a>
+          <a class="btn ghost" href="#contact">今すぐ申し込む</a>
+        </div>
+        <ul class="trust-badges" aria-label="特長">
+          <li>最短<span class="strong">15分</span>着金</li>
+          <li>手数料<span class="strong">0円</span></li>
+          <li>年中無休<span class="strong">24時間</span>受付</li>
+        </ul>
+      </div>
+      <div class="hero-card" role="img" aria-label="オンライン申込みのイメージ">
+        <div class="glass">
+          <h3>オンライン申込み</h3>
+          <ul>
+            <li>本人確認はスマホでOK</li>
+            <li>かんたん3ステップ</li>
+            <li>安心の即時連絡</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calc" class="calc">
+    <div class="container">
+      <h2>買取シミュレーター</h2>
+      <p class="sub">ブランド・区分・額面を選ぶと、概算の入金額が自動で表示されます。</p>
+      <form class="card calc-form" onsubmit="event.preventDefault();">
+        <div class="grid">
+          <label class="field">
+            <span>ギフト券ブランド</span>
+            <select id="brand" aria-label="ギフト券ブランド">
+              <option value="amazon">Amazonギフト</option>
+              <option value="apple">Appleギフト</option>
+              <option value="google">Google Play</option>
+              <option value="nintendo">ニンテンドープリペイド</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>ご利用区分</span>
+            <select id="tier" aria-label="ご利用区分">
+              <option value="first">初回</option>
+              <option value="repeat">リピート</option>
+              <option value="bulk">大口（30万円以上）</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>額面（円）</span>
+            <input type="number" id="amount" min="1000" step="500" placeholder="10000" inputmode="numeric" aria-label="額面">
+          </label>
+        </div>
+        <div class="result">
+          <div class="payout">
+            <div class="label">概算の入金額</div>
+            <div id="payout" class="money" aria-live="polite" aria-atomic="true">—</div>
+          </div>
+          <div class="rate">
+            <div class="label">適用レート</div>
+            <div id="rate" class="rate-val">—</div>
+          </div>
+          <button class="btn" type="button" onclick="openApply()">この内容で申込む</button>
+        </div>
+        <p class="note">※ 試算は目安です。コードの状態や在庫状況により変動する場合があります。</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="flow" class="flow">
+    <div class="container">
+      <h2>ご利用の流れ</h2>
+      <ol class="steps">
+        <li>
+          <h3>① 申込み</h3>
+          <p>フォームにブランド・額面・連絡先を入力。</p>
+        </li>
+        <li>
+          <h3>② 本人確認</h3>
+          <p>初回のみ。スマホで身分証（運転免許証・マイナンバーカード等）を撮影して送信。</p>
+        </li>
+        <li>
+          <h3>③ コード送信</h3>
+          <p>査定用にギフト券番号（PIN）を安全に送信。</p>
+        </li>
+        <li>
+          <h3>④ 振込</h3>
+          <p>査定OK後に指定口座へお振込み。最短15分。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container grid-3">
+      <div class="feature card">
+        <h3>高水準レート</h3>
+        <p>主要ブランドに対応。状況に応じて柔軟にレートを設定します。</p>
+      </div>
+      <div class="feature card">
+        <h3>手数料0円</h3>
+        <p>振込手数料や登録料はいただきません。</p>
+      </div>
+      <div class="feature card">
+        <h3>セキュア対応</h3>
+        <p>通信はTLSで保護。お客様情報は適切に管理します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>初回とリピートで何が違いますか？</summary>
+        <p>初回は本人確認が必要で、特別レートが適用されます。2回目以降は手続きが簡略化されます。</p>
+      </details>
+      <details>
+        <summary>どの銀行に対応していますか？</summary>
+        <p>主要銀行・ネット銀行に対応しています。原則、振込手数料は当社負担です。</p>
+      </details>
+      <details>
+        <summary>未使用コードのみですか？</summary>
+        <p>はい。使用済み・無効コードはお受けできません。</p>
+      </details>
+      <details>
+        <summary>大口の買取は可能ですか？</summary>
+        <p>可能です。事前に在庫状況を確認しますので、お早めにご相談ください。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>お申込み</h2>
+      <p class="sub">下記のフォームから送信するとメール作成画面が開きます。送信前に内容をご確認ください。</p>
+      <form class="card contact-form" onsubmit="sendMail(event)">
+        <div class="grid">
+          <label class="field">
+            <span>お名前</span>
+            <input type="text" id="name" required autocomplete="name">
+          </label>
+          <label class="field">
+            <span>メール</span>
+            <input type="email" id="email" required autocomplete="email" inputmode="email">
+          </label>
+          <label class="field">
+            <span>お電話（任意）</span>
+            <input type="tel" id="tel" autocomplete="tel">
+          </label>
+          <label class="field">
+            <span>振込先（銀行名/支店/口座種別/番号/名義）</span>
+            <input type="text" id="bank" required>
+          </label>
+          <label class="field wide">
+            <span>メッセージ</span>
+            <textarea id="msg" rows="4" placeholder="例）Amazonギフト 3万円分、初回。できれば本日中の振込希望です。"></textarea>
+          </label>
+        </div>
+        <button class="btn" type="submit">メール作成</button>
+        <p class="note">※ このフォームはお使いのメールアプリを起動して送信します。サーバー設定不要。</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="container">
+      <p class="muted">法令遵守のため、犯罪収益移転防止法等に基づき本人確認を実施します。各ブランドの利用規約に違反する行為（転売禁止等）はお受けできません。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="brand-row">
+      <img src="img/logo.svg" alt="" width="24" height="24">
+      <strong>ギフトバイ</strong>
+    </div>
+    <nav class="footer-nav">
+      <a href="#top">トップ</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">申込み</a>
+      <a href="#" onclick="alert('プライバシーポリシーは任意のURLへ差し替えてください');return false;">プライバシー</a>
+      <a href="#" onclick="alert('特定商取引法に基づく表記は任意のURLへ差し替えてください');return false;">特商法表記</a>
+    </nav>
+    <small class="muted">© <span id="year"></span> GIFTOBUY</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
